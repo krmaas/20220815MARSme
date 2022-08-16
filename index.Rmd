@@ -31,7 +31,7 @@ Day 1|Morning| [Introduction to communities](https://krmaas.github.io/20220815MA
 .|.|[Overview of wetlab](https://krmaas.github.io/20220815MARSme/introWetLab.html)
 .|.|[Potential wetlab errors](https://krmaas.github.io/20220815MARSme/wetLabErrors.html)
 .|Afternoon|[Introduction to Basespace](https://krmaas.github.io/20220815MARSme/intro.seq.analysis.html)
-.|.|Begin mothur processing
+.|.|[Begin mothur processing](https://krmaas.github.io/20220815MARSme/mothur.cheatsheet.html)
 .|.|Sequencing quality control
 Day 2|Morning|Continue mothur processing
 .|.|Chimera checking
