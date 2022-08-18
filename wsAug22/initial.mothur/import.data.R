@@ -3,12 +3,13 @@
 # install.packages("vegan")
 # install.packages("dplyr")
 # install.packages("tidyverse")
+# install.packages("indicspecies")
 
 library(ggplot2)
 library(vegan)
 library(dplyr)
 library(tidyverse)
-
+library(indicspecies)
 
 parseDistanceDF = function(phylip_file) {
   
@@ -34,15 +35,17 @@ otu <- select(otu, -label, -numOtus)
 
 ### reading in taxa data
 ## may come back to this tomorrow
-# taxa <- read.table(textConnection(gsub("\\(.+?\\);", "\t", readLines("../TLP2021.trim.contigs.good.unique.good.filter.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy"))), col.names=c("OTU", "Size", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus"), skip=1)
-# taxa <- taxa[taxa$OTU %in% names(otu),]
+taxa <- read.table(textConnection(gsub("\\(.+?\\);", "\t", 
+            readLines("../wsAug22.trim.contigs.good.unique.good.filter.precluster.denovo.vsearch.pick.opti_mcc.0.03.cons.taxonomy"))), 
+            col.names=c("OTU", "Size", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus"), skip=1)
+taxa <- taxa[taxa$OTU %in% names(otu),]
 # 
 # # get OTU abundance for this subsampling
-# sub.size <- data.frame(OTU = colnames(otu), size.sub = colSums(otu))
+sub.size <- data.frame(OTU = colnames(otu), size.sub = colSums(otu))
+
+taxa <- full_join(taxa, sub.size, by = "OTU", copy=TRUE)
 # 
-# taxa <- full_join(taxa, sub.size, by = "OTU", copy=TRUE)
-# 
-# 
+# ## make a smaller OTU matrix of just abundant OTUs
 # maxab <- apply(otu, 2, max)
 # n1 <- names(which(maxab < 50))
 # otu.ab <- otu[,-which(names(otu) %in% n1)]

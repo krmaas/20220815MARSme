@@ -125,3 +125,30 @@ tyc.perm
 
 tyc.perm2 <- adonis(as.dist(tyc) ~ alpha.expdata$Site * alpha.expdata$Type, perm = 99, rm.na = TRUE)
 tyc.perm2
+
+
+# indicator species, try to find OTUs that are responsible for Type being sig varibility
+##look at indicspecies R help for good explaination of what it's doing
+indic <- multipatt(otu[,-1], alpha.expdata$Type, control = how(nperm=99))
+
+summary(indic)
+
+write.csv(file = "indicator.species.csv",
+          indic$sign %>%
+            rownames_to_column(var = "OTU") %>%
+            mutate(p.fdr = round(p.adjust(p.value, "fdr"), 3)) %>%
+            right_join(taxa, by = "OTU") %>%
+            arrange(index)
+          )
+
+
+
+
+
+
+
+
+
+
+
+
