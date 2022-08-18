@@ -44,3 +44,4 @@ Day 3|Morning|Reproducible Research
 .|.|Subsetting, joining, data management
 Day 4|Morning|[Ecological statistics](https://krmaas.github.io/20220815MARSme/wsAug22/initial.mothur/alpha.beta.div.R)
 .|Afternoon|Hypothesis testing &Indicator Species Analysis
+.|[Taxa Barplot](https://krmaas.github.io/20220815MARSme/wsAug22/initial.mothur/taxa.barplot.R)
