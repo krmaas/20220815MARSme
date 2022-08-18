@@ -100,6 +100,8 @@ tyc.plot +
   guides(fill = guide_legend(override.aes = list (shape = 22)))+
   ggtitle("Theta YC")+
   theme_bw()
+ggsave(filename = "tyc.nms.jpg")
+
 
 # fit experiemtnal or environmental data onto ordination space
 #envfit #function in vegan, univariate strength to one point in ordination
