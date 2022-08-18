@@ -42,6 +42,5 @@ Day 3|Morning|Reproducible Research
 .|.|[Introduction to R ggplot](https://krmaas.github.io/20220815MARSme/wsAug22/initial.mothur/introToggplot.R)
 .|Afternoon|[Importing data into R](https://krmaas.github.io/20220815MARSme/wsAug22/initial.mothur/import.data.R)
 .|.|Subsetting, joining, data management
-Day 4|Morning|Ecological statists
-.|.|
+Day 4|Morning|[Ecological statistics](https://krmaas.github.io/20220815MARSme/wsAug22/initial.mothur/alpha.beta.div.R)
 .|Afternoon|Hypothesis testing &Indicator Species Analysis
