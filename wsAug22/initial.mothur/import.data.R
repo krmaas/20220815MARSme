@@ -60,28 +60,14 @@ jc <- parseDistanceDF("../wsAug22.trim.contigs.good.unique.good.filter.precluste
 bc <- parseDistanceDF("../wsAug22.trim.contigs.good.unique.good.filter.precluster.denovo.vsearch.pick.opti_mcc.braycurtis.0.03.lt.ave.dist")
 tyc <- parseDistanceDF("../wsAug22.trim.contigs.good.unique.good.filter.precluster.denovo.vsearch.pick.opti_mcc.thetayc.0.03.lt.ave.dist")
 
-# experimental data ### DREW put your data in here
+# experimental data ### put your data in here
 expdata <- read.table(file="../may18ws.env.txt",  header=T, stringsAsFactors = TRUE)
 
 # make a file that is 2 column: the sample name in your exp data csv, and the group name in mothur files 
 samples <- read.table(file="../may18ws.sample.txt", header=1, stringsAsFactors = FALSE)
 expdata <- left_join(expdata, samples, on="Sample")
 
-alpha.expdata <- left_join(alpha, expdata, on="group")
 
 ### if you have issues with this join, email me your expdata and samples.csv
 alpha.expdata <- left_join(alpha, expdata, on="group")
 
-
-
-##### initial look at alpha diversity
-
-ggplot(data=alpha.expdata, mapping = aes(x = Type, y = sobs))+
-  geom_boxplot()
-
-ggplot(data=alpha.expdata, mapping = aes(x = Type, y = shannon))+
-  geom_boxplot()
-
-ggplot(data=alpha.expdata, mapping = aes(x = Type, y = invsimpson))+
-  geom_boxplot()
-S
